@@ -1,5 +1,4 @@
-<html>
-<body>
-asdf
-<\body>
-<\html>
+Markdown is not html.
+** xyz
+
+page.html to serve static
