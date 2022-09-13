@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Networking theory seminar</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Networking theory seminar">
+  <meta name="keywords"
+    content="networking,theory,seminar,maciej,pacut,maciek,online,knapsack,repartition,packing,covering,communication,technology,vienna,postdoc,postdoctoral,researcher,grant,computer,science,papers,publications,algorithms,networks,networking">
+  <meta name="author" content="Maciej Pacut">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      color: #5b4b4b;
+      background-color: white;
+      font-family: sans-serif;
+      padding: 2% 10%;
+    }
+
+    a:link {
+      color: rgb(160, 0, 0);
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: rgb(160, 0, 0);
+      text-decoration: none;
+    }
+
+    a[href]:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center
+    }
+
+    h2.section {
+      padding-bottom: 1%;
+      margin-top: 6%;
+      border-bottom: solid 2px;
+    }
+
+    li {
+      margin-bottom: 2%;
+    }
+
+    .subscript {
+      font-size: 8pt;
+      text-align: center
+    }
+
+    table.intro {
+      width: 100%
+    }
+
+    .intro-separator {
+      margin-bottom: 8%
+    }
+
+    .footer-separator {
+      padding-bottom: 28%
+    }
+
+    .imgtxt {
+      position: relative;
+      top: 6px
+    }
+
+    .minibreak {
+      margin-bottom: 1%
+    }
+
+    .personal {
+      text-align: right
+    }
+
+    .fiber {
+      align: left;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+
+    body {
+      padding-top: 0px;
+      margin-top: 0px;
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+
+    .licence {
+      text-align: right;
+      color: white;
+    }
+
+    .fiberimg {
+      width: 100%
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fiber">
+    <img class="fiberimg" alt="networking theory seminar" src="./fiber.png">
+  </div>
+  <div class="intro-separator"></div>
+
+  <h1>Networking theory seminar</h1>
+
+  <h2 class="section">About the seminar</h2>
+
+  Networking theory seminar is a minicourse / research seminar hosted by <a href="https://maciejpacut.github.io">Maciej Pacut</a> at <a href="https://ct.cs.univie.ac.at">Communication Technologies Group</a> at University of Vienna.
+  The seminars take place from April 2020.
+
+  <h2 class="section">Public talks</h2>
+
+  <ul>
+    <li>24.05.2020 Mahmoud Parham on Scheduling in reconfigurable networks: Primal-dual algorithm and Yao's principle.
+ </li>
+    <li>13.07.2020 Wenkai Dai on Deterministic Paging</li>
+    <li>12.10.2020 Mahmoud Parham on Work Function algorithm for k-server</li>
+    <li>02.11.2020 Wenkai Dai on Online Scheduling for Related Machines <a href="./slides/Slides_online_balancing.pdf">[slides]</a></li>
+    <li>23.11.2020 Juan Vanerio on Oblivious Routing (Valiant Routing, Bitfixing algorithm) <a href="slides/Valiant_Net_theory_seminar_final.pdf">[slides]</a></li>
+    <li>11.01.2021 Arash Pourdamghani on Competitive analysis of Arrow Distributed Protocol <a href="slides/Arrow_and_Ivy.pdf">[slides]</a></li>
+    <li>08.02.2021 Vamsi Addanki on Online List Update <a href="slides/online_list_update.pdf">[slides]</a></li>
+    <li>12.04.2021 Wenkai Dai on Online Routing <a href="slides/Online_Routing_Dai.pdf">[slides]</a></li>
+    <li>07.06.2021 Juan Vanerio on Online List Access with Locality of Reference<a href="slides/locality_Net_theory_seminar.pdf"> [slides]</a></li>
+    <li>11.06.2021 Siddhesh Kalekar from IIT Dehli (guest talk) on Offline List Access <a href="slides/Siddhesh_offline_Reingold_westbrook.pdf"> [slides]</a></li>
+    <li>05.07.2021 Loric Andre from ENSTA Paris (guest talk) on Stochastic List Access <a href="slides/loric-stochastic.pdf"> [slides]</a></li>
+    <li>02.08.2021 Loric Andre from ENSTA Paris (guest talk) on Locality in List Access <a href="slides/locality2_net_theory_loric.pdf"> [slides]</a></li>
+    <li>16.08.2021 Arash Pourdamghani on Loosely Competitive Caching<a href="slides/Arash_Loose_Competitiveness.pdf"> [slides]</a></li>
+    <li>13.09.2021 Wenkai Dai on Virtual I/O Queues <a href="slides/Virtual_output_wenkai.pdf"> [slides]</a></li>
+    <li>08.11.2021 Vamsi Addanki on Timestamp algorithm for List Access <a href="slides/Vamsi_Addanki_timestamp.pdf"> [slides]</a></li>
+    <li>22.11.2021 Juan Vanerio on Online Algorithms with Machine-Learned Predictions<a href="slides/online_algs_ML_Net_theory_seminar.pdf"> [slides]</a></li>
+    <li>17.01.2022 Marzieh Aliakbarpourbar on Online List Access with Advice<a href="slides/List update problem with untrusted advice_MarziehAliakbarpour.pdf"> [slides]</a></li>
+    <li>09.05.2022 Arash Pourdamghani on Secretary Problems with Predictions <a href="slides/Arash_Seceratry_problem_with_advice.pdf">[slides]</a></li>
+  </ul>
+
+
+  <h2 class="section">Material overview</h2>
+
+  The course roughly consists of three parts:
+  <ul>
+    <li>introduction to online algorithms and competitive analysis,</li>
+    <li>application of online algorithms in networking,</li>
+    <li>techniques of proving good preformance beyond the competitive analysis.</li>
+  </ul> 
+
+  The material in this course is based on selected chapters from three books: 
+  <ul>
+    <li>
+    <a href="https://dl.acm.org/doi/book/10.5555/290169">Online Computation and Competitive Analysis</a><br>
+    Allan Borodin, Ran El-Yaniv, Cambridge University Press 1998
+    </li>
+    <li>
+      <a href="https://www.springer.com/gp/book/9783540649175">Online Algorithms: State of the Art</a><br>
+      Atmos Fiat, Gerhard Woeginger
+    </li>
+    <li>
+      <a href="https://www.cambridge.org/core/books/beyond-the-worstcase-analysis-of-algorithms/8A8128BBF7FC2857471E9CA52E69AC21">Beyond Worst Case Analysis</a><br>
+      Tim Roughgarden
+    </li>
+  </ul>
+  Additionally, the script by Susanne Albers <a
+        href="https://www.brics.dk/LS/96/2/BRICS-LS-96-2.ps.gz">BRICS lecture notes</a> contains concise overview of some discussed topics.
+
+  <h2 class="section">Part 1: introduction to online algorithms</h2>
+  <ol>
+    <li>
+      <b>Introduction to online computation and competitive analysis</b>
+      Examples of online problems: List Access, Splay Tree.
+      <br>
+      Competitive analysis.
+     </li>
+  <li>
+      <b>Metrical Task Systems</b><br>
+      Online problems as Request-Answer Games.
+      Subset of online problems: Metrical Task Systems
+     </li>
+
+    <li>
+        <b>Searching for a point on a line.</b> <br><br>
+        Section 2 from <a href="https://sites.cs.ucsb.edu/~suri/cs231/Rlist/search.pdf">Searching in The Plane</a><br>
+        R. Baeza-Yates, J. Culberson, G. Rawlins<br>
+        Information and Computation, 1993<br><br>
+
+
+      Chapter 9 from <a href="https://www.brics.dk/LS/96/2/BRICS-LS-96-2.ps.gz">BRICS lecture notes</a>.
+      </li>
+          <li>Online "packing items to containers" problems: Online Bin Packing, Online Knapsack, Online Scheduling
+            <br>
+            Cygan Jez</li>
+<li>
+      <b>List update: deterministic algorithm Move-To-Front</b><br>
+      (potential function technique)<br><br>
+
+      Section 2 from
+      <a href="http://www.cs.cmu.edu/~sleator/papers/amortized-efficiency.pdf">Amortized efficiency of list update and
+        paging rules.</a><br>
+      D. Sleator, R. Tarjan<br>
+      Communications of the ACM, 1985
+      </li>
+
+<li>
+      <b>List update: randomized algorithms</b><br>
+      (potential function technique)<br><br>
+
+      Section 2 from
+      <a href="http://www.cs.cmu.edu/~sleator/papers/amortized-efficiency.pdf">Amortized efficiency of list update and
+        paging rules.</a><br>
+      D. Sleator, R. Tarjan<br>
+      Communications of the ACM, 1985
+      <br><br>
+    
+      Section 3.1 (only algorithm BIT) from
+      <a href="https://www.cs.cmu.edu/~sleator/papers/list-update-problem.pdf">
+        Randomized competitive algorithms for the list update problem</a><br>
+    
+      N. Reingold, J. Westbrook, D. Sleator <br>
+    
+      Algorithmica, 1994<br><br>
+    
+      Analysis of combination of BIT and TIMESTAMP from
+      <a href="http://www14.in.tum.de/personen/albers/papers/ipl95.pdf">A combined BIT and TIMESTAMP algorithm for the list
+        update problem</a><br>
+      S. Albers, B. von Stengel, R. Werchner<br>
+      Information Processing Letters, 1995<br><br>
+    
+      Chapters 1 and 2 from <a href="https://dl.acm.org/doi/book/10.5555/290169">Online Computation and Competitive
+        Analysis</a>.
+      Chapter 5 from <a href="https://www.brics.dk/LS/96/2/BRICS-LS-96-2.ps.gz">BRICS lecture notes</a>.
+    </li>
+    <li>
+      <b>Online Set Cover via Primal-Dual approach</b><br>
+
+      Sections 3, 4, 5.1 from <a href="https://www.tau.ac.il/~nivb/download/primal-dual-mor.pdf">Online primal–dual algorithms for covering and packing problems</a>.<br>
+      N. Buchbinder, J. Naor<br>
+      ESA 2005<br>
+      <br>
+
+      Chapter 4, sections: 4.1, 4.2 (only Algorithm 1), 4.3 and 4.4.1 from the book <a
+        href="https://www.tau.ac.il/~nivb/download/pd-survey.pdf">The Design of Competitive
+        Online Algorithms via a Primal–Dual Approach</a>, Niv Buchbinder and Joseph Naor
+      </li>
+         
+
+    </ol>
+  <h2 class="section">Part 2: Online algorithms for networking problems</h2>
+    <ol>
+
+    <li>
+      <b>Caching: deterministic upper and lower bounds, and randomized upper bound</b><br>
+      (phase-based analysis)<br><br>
+
+      <a href="https://arxiv.org/pdf/cs/0205038.pdf">Competitive paging algorithms.</a>
+      A. Fiat, R. Karp, M. Luby, L. McGeoch, D. Sleator, N. Young<br>
+      Journal of Algorithms, 1991.<br><br>
+
+      Possibly the best source is: sections 1.2 and 2.2 from <a
+        href="https://www.brics.dk/LS/96/2/BRICS-LS-96-2.ps.gz">BRICS lecture notes</a>.
+      Also described in various other sources, e.g. chapters 3 and 4 from <a href="https://dl.acm.org/doi/book/10.5555/290169">Online Computation and Competitive Analysis</a>.
+
+
+    </li>
+
+    <li>
+      <b>Scheduling for identical and related machines.</b><br>
+      (doubling technique)<br><br>
+      As a short warm-up,
+      Section 12.2.1 from <a href="https://dl.acm.org/doi/book/10.5555/290169">Online Computation and Competitive Analysis</a>.<br>
+      <br>
+      The main part is section 3.2 from
+      <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.34.5122&rep=rep1&type=pdf">On-Line Routing of
+        Virtual Circuits with Applications to Load Balancing and Machine Scheduling.</a>
+      J. Aspnes, Y. Azar, A. Fiat, S. Plotkin, O. Waarts.<br>
+      J. ACM, 1997<br><br>
+
+      Also described in chapters 12.2.3 from <a href="https://dl.acm.org/doi/book/10.5555/290169">Online Computation and Competitive Analysis</a>.
+
+      Identical machines described in chapter 8 from <a href="https://www.brics.dk/LS/96/2/BRICS-LS-96-2.ps.gz">BRICS lecture notes</a>.
+    </li>
+           <li>
+        <b>k-server for trees.</b><br><br>
+        Section 3 from <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.2395">An Optimal On-line Algorithm for k Servers on Trees</a><br>
+        M. Chrobak , L. Larmore <br>
+        SIAM Journal on Computing, 1996<br><br>
+
+        Section 3.2 from <a href="http://www.cs.ox.ac.uk/people/elias.koutsoupias/Personal/Papers/paper-kou09.pdf">The k-server problem</a><br>
+E. Koutsoupias<br>
+ Computer Science Review, 2009<br><br>
+
+ Also described in chapter 10.4 from 
+      <a href="https://dl.acm.org/doi/book/10.5555/290169">Online Computation and Competitive Analysis</a>.
+      </li>
+     <li>
+        <b>Distributed file management</b><br><br>
+
+<a href="https://link.springer.com/article/10.1007/s00224-006-1251-9">Dynamic Analysis of the Arrow Distributed Protocol</a><br>
+      
+
+    Maurice Herlihy, Fabian Kuhn, Srikanta Tirthapura, Roger Wattenhofer <br>
+       Theory of Computing Systems 2006<br>
+
+      </li>
+     
+      <li>
+        <b>Online File Migration</b><br><br>
+      </li>
+
+      <li>
+        <b>Scheduling in reconfigurable networks</b><br><br>
+
+        Primal-dual algorithm and Yao's principle.
+        <br>
+Scheduling for Weighted Flow and Completion Times in Reconfigurable
+               Networks
+        <br>
+
+        Michael Dinitz and
+               Benjamin Moseley
+      </li>
+
+
+
+      <li>
+        <b>Online load-balancing</b><br><br>
+        Yossi Azar
+      </li>
+
+      <li>
+        <b>Online Scheduling in Flowtime Minimization</b><br><br>
+
+      Nikhil Bansal, Bouke Cloostermans: Minimizing Maximum Flow-Time on Related Machines, APPROX 2015
+
+      </li>
+
+
+      <li>
+        <b>ReNets</b>
+      </li>
+
+
+      <li>
+        <b>Ski Rental with application to networking systems</b>
+      </li>
+
+
+
+
+      <li>
+        <b>Online buffer reordering</b>
+      </li>
+
+
+
+      <li>
+        <b>Online routing</b><br><br>
+        Variants: knapsack-type of routing (call admission) and scheduling-type of routing (virtual circuits routing)
+      </li>
+
+      <li>
+        <b>Online matching</b><br><br>
+
+<a href="https://web.stanford.edu/~saberi/adwords.pdf">AdWords and generalized online matching</a><br>
+      A. Mehta, A. Saberi, U. Vazirani, V. Vazirani<br>
+       Journal of ACM 2008<br>
+
+      </li>
+    <li>Online Graph Partitioning and Online Rematching</li>
+  </ol>
+
+  <h2 class="section">Part 3: Beyond Worst-Case Analysis</h2>
+
+  <ol>
+        <li>Virtual input-output queues under speedup
+(Resource augmentation)
+    </li>
+<li>
+      Caching: competitive ratio under resource augmentation results
+    </li>
+
+    <li>Caching: Young's loose competitiveness</li>
+    <li>
+      Stochastic analysis: Valiant routing
+    </li>
+    <li>
+      Selfish Routing
+    </li>
+  <li>
+      Caching: access graph
+    </li>
+  <li>
+      Caching: diffuse adversaries
+    </li>
+  <li>
+      Caching: expert advice
+    </li>
+  <li>
+      Caching and List Access: locality in the input
+    </li>
+ <li>
+      The Secretary Problem: Random Arrival Order model
+    </li>
+<li>
+      Lookahead
+    </li>
+
+
+
+
+
+
+
+
+  </ol>
+  <h2 class="section">Further reading</h2>
+  <ul>
+    <li><a href="http://www.cs.yale.edu/homes/yry/readings/general/">http://www.cs.yale.edu/homes/yry/readings/general/</a></li>
+    <li><a href="http://www.sigcomm.org/awards/test-of-time-paper-award">http://www.sigcomm.org/awards/test-of-time-paper-award</a></li>
+    <li><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.323.8542&rep=rep1&type=pdf">10 recommended papers in networking</a></li>
+  </ul>
+
+
+  <h2 class="section">Further topics from online algorithms (under construction)</h2>
+  <ul>
+    <li>TCP acknowledgement</li>
+    <li>Online Minimum Spanning Tree</li>
+    <li>Online Steiner Tree</li>
+    <li>Online Facility Location</li>
+    <li>Online FIB Caching</li>
+  </ul>
+
+
+
+  <div class="footer-separator"></div>
+</body>
