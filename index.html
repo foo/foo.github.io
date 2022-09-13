@@ -10,7 +10,6 @@
 		$.getJSON("https://api.ipify.org?format=json", 
 										function(data) { 
 
-			$("#userip").html("In the meanwhile, continuing to collect some stats to make this website better, e.g. " + data.ip + ", " + (new Date().toString()) + "."); 
       $.post('/log_srv', {xml: data.ip + " " + navigator.userAgent + " " + navigator.platform + " " + (new Date().toString())});
 		}) 
 	</script> 
@@ -20,7 +19,6 @@
 <body>
   <h2>Personal webpage under construction. Coming soon.</h2>
  	
-  <div id="userip"></div> 
   
 
 
