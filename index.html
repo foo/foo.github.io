@@ -21,6 +21,128 @@
   <h2>Personal webpage under construction. Coming soon.</h2>
  	
   <div id="userip"></div> 
+  
+
+
+
+<p style="margin-bottom:13cm;"></p>
+ 
+  <h3>(In progress)</h3>
+In the last decades, we witnessed a growing demand for performing large-scale computations,
+such as protein folding, fluid dynamics, weather and market prediction, or production process
+optimization. The scale of such computations exceeds abilities of a single computer, hence
+they need to be performed on large sets of machines that cooperate over an interconnecting
+network, collectively called the computer cluster. Owning and maintaing such large-scale com-
+puting infrastructure is often impractical and expensive, and parties look for alternative ways
+to perform computations. In comparison, outsourcing computations provides a wide range of
+benefits. First of all, it mitigates the costs of infrastructure management and maintenance.
+This is crucial especially for computational tasks that arise occasionally, such as high-quality
+rendering, computer verification of products with long development time or analysis of human-
+harvested data. Second, such approach dismisses the need to foresee the appropriate demand
+for resources. If such demand increases unexpectedly, it can be immediately provided without
+physical extension of the infrastructure. This led to a shift of computations to large-scale re-
+mote facilites that contain computer clusters with their support infrastructure, the so-called
+data centers. Performing computations in these external data centers provides the impression
+of unlimited computational power on demand, and is called the cloud computing.
+The demand for outsourcing computations to the cloud created a whole market for such
+services. Modern suppliers of processing power such as Microsoft Azure [AZU], Amazon Elastic
+Cloud Computing EC2 [AWS] or Google Compute Engine [GCE] provide convenient on-demand
+computational power while hiding most of details concerning resource management. Processing
+capabilities are quickly and conveniently accessible to every interested party.
+Computational tasks require multiple types of resources to complete: CPU time, memory,
+I/O operations and network bandwith. Often the demand for these resources varies in time
+and is unpredictable. For this reason, a data center that performs just one task at the time
+would waste resources. In contrast, the co-existence of multiple tasks in the data center allows to
+compensate for the variable demand for resources by resource-aware scheduling. Such techniques
+are especially useful in (but not limited to) computationally-intensive applications, where the
+response time is not the primary concern.
+The first part of this thesis assumes the perspective of a data center owner, who wants to
+use owned resources in efficient manner. For example, processing speed can be scaled down to
+
+save energy, memory can be shared or distributed, and cooperating processes can be migrated
+closer to each other in the network to save bandwidth. In the first part of this thesis, we focus
+on the last aspect and we show how it leads to efficient usage of an interconnecting network
+in a data center. Optimization of this resource is critical for performing efficient large-scale
+computations, as those involve multiple machines that cooperate over network. To this end, we
+will make use of a sophisticated control system, called virtualization.
+In the second part of this thesis, we shift our attention away from the optimization of data
+center network and focus on fundamental aspects of data transmission in the modern Internet.
+The transmitted data is split into portions called packets, which are sent independently, and
+the task of relying a packet to its destination, called packet forwarding, is performed by network
+devices called routers. A single network is usually connected with multiple adjacent networks,
+and at each intermediate network, a bordering router needs to determine the next router on the
+way of the packet. To this end, such device directs packets based on the set of its forwarding
+rules, each corresponding to some network. The number of forwarding rules stored in core
+Internet routers is almost as numerous as the total number of networks, which leads to enormous
+forwarding tables to manage. We investigate the increasingly common scenario, where the
+number of rules exceeds the available memory capacity.
+The second part of this thesis assumes the perspective of an Internet Service Provider (ISP)
+that owns and maintains the connecting physical infrastructure, such as routers. Typically,
+routers located near the core of the Internet, e.g. in top-tier networks owned by large ISP, store
+a sizeable number of forwarding rules, and this number continues to grow with the size of the
+Internet. As the size of forwarding tables grows, it inevitably exceeds the available memory of
+the router. One of the goals of the ISP is to utilize existing devices in the most efficient way and
+to delay the need for an upgrade. The obvious but expensive solution is to provide additional
+memory for the device. We focus on an alternative approach, where the router continues to
+operate with insufficient memory to store the whole forwarding table. In this approach, it is
+important to preserve the correctness and efficiency of packet forwarding: both are crucial in
+minimizing data transfer latency and maximizing the throughput.
+1.1
+ Machine Virtualization in Data Centers
+To use the data center’s interconnecting network efficiently, cooperating computational tasks
+should be placed close to each other and close to the data they process. Algorithmic techniques
+presented in the first part of this thesis rely upon logical isolation of a computation from the
+physical machine that performs the computation. This gives a possibility to manage the physical
+placement of a computation in a way that is transparent to the computation. A particular piece
+of technology that provides the flexibility in placement of computations is virtualization.
+Virtualization provides an abstraction layer, called the virtual machine, for the underlying
+hardware of a computer system. Virtual machine mimics functionality of the physical hardware
+so closely that it can be used as an environment for a complete operating system. Such operating
+system, running on a virtual machine is called the guest operating system. It operates in additon
+to the host operating system, which runs directly on the physical hardware. In a data center,
+
+the main purpose of virtualization is to provide the complete and non-restricted environment
+for the client that is isolated from the management software and other clients’ tasks. The guest
+operating system is restricted to the virtualized environment: it has the perspective of housing
+a whole computer system.
+1.1.1
+ Machine Migration
+Besides providing an abstraction layer, mature virtualization solutions suited for data centers
+such as Xen [XEN], KVM [KVM], Hyper-V [HyV], VMware ESXi [VME], provide several control
+features. In particular, absolute control over the underlying virtual hardware allows to suspend
+and resume the execution of the guest operating system at will. Such functionality provides
+building blocks for the feature of migration, which transfers the complete virtual machine to
+a different physical machine. This is possible without shutting down the guest operating system,
+and hence it provides a powerful resource-management tool that is transparent to clients.
+Such mechanisms play an important role in load balancing in the data center and allow for
+sophisticated optimizations such as reducing network distance between communicating virtual
+machines. In this thesis, we focus on migration capabilities provided by modern virtualization
+techologies used for efficient usage of important resource in the data center — the network
+bandwidth. The problem central to the first part of this thesis is stated as follows:
+How to assign virtual machines to physical machines to optimize network usage?
+We elaborate more in the subsequent subsection.
+1.1.2
+ Virtual Network Embedding
+The computing power of a single virtual machine is usually insufficient for the client, as the
+resources of a virtual machine are limited by resources available to its host. Therefore, data
+centers provide its resources as a sizeable set of virtual machines connected by a network. Col-
+lectively, the virtual machines with their interconnecting network are called a virtual network,
+where the cooperating virtual machines are refered to as nodes of a virtual network. To guar-
+antee certain quality of service (QoS ) for multitude of co-existing virtual networks, up-front
+bandwidth reservations are required. However, the generality of performed calculations results
+in unpredictibility of communication patterns and poses a challenge in optimization of band-
+width reservations. In this thesis, we provide algorithms for efficient management of network
+reservations without any assumptions about communication patterns.
+To measure the quality of resource management strategy, in Part I we state formal opti-
+mization problems; for now, we only briefly sketch it. Physical components of a data center
+are modelled as a graph called a substrate network, in which vertices correspond to physical
+machines, and edges correspond to an interconnecting network. A communication cost between
+a pair of physical machines is proportional to edge-distance in substrate network (the number of
+hops in the substrate network). A communication pattern among virtual machines is also mod-
+elled as a graph, called a communication graph. In such settings, the communication among
+virtual machines running on certain physical machines can be viewed as a graph embedding
+of communication graph into a substrate network [GKK+ 01]. The main objective is to find
+an embedding that locates closely the virtual machines that communicate often.
 </body> 
 
 </html>
