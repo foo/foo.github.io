@@ -1,129 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Personal website</title>
-  	<script src= 
-"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
-	</script> 
-
-	<script> 
-		$.getJSON("https://api.ipify.org?format=json", 
-										function(data) { 
-
-      $.post('/log_srv', {xml: data.ip + " " + navigator.userAgent + " " + navigator.platform + " " + (new Date().toString())});
-		}) 
-	</script> 
-
-  </head>
+  <title>Maciej Pacut</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Maciej Pacut, postdoctoral researcher at
+  Faculty of Computer Science, Technical University of Berlin. Online algorithms for
+  networks and data centers.">
+  <meta name="keywords" content="maciej,pacut,maciek,online,algorithms,knapsack,advice,communication,technology,vienna,berlin,postdoc,postdoctoral,researcher,grant,computer,science,papers,publications,algorithms,networks,networking">
+  <meta name="author" content="Maciej Pacut">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'none'; object-src 'none'">
+  <link rel="icon" href="favicon.ico">
+  <style>
+    body {
+      color: #5b4b4b;
+      background-color: white;
+      font-family: sans-serif;
+      padding: 2% 10%;
+    }
+    a.external {
+      display: inline-block;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    a:link {
+      color: rgb(160,0,0);
+      text-decoration: none;
+    }
+    a:visited {
+      color: rgb(160,0,0);
+      text-decoration: none;
+    }
+    a[href]:hover {
+      text-decoration: underline;
+    }
+    li {
+      margin-bottom: 2%;
+    }
+    .subscript {
+      font-size: 8pt;
+      text-align: center
+    }
+    table.intro {
+      width: 100%
+    }
+    .intro-separator {
+      margin-bottom: 6%
+    }
+    .footer-separator {
+      padding-bottom: 28%
+    }
+    .imgtxt {
+      position: relative; top: 6px
+    }
+    .minibreak {
+      margin-bottom: 1%
+    }
+    .personal {
+      text-align:right
+    }
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      padding-bottom: 0.5em;
+    }
+    .faculty {
+      font-size: 1.17em;
+      font-weight: bold;
+    }
+    .info {
+      font-size: 1.12em;
+      font-weight: bold;
+      padding-bottom: 0.5em;
+    }
+    h1 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .section {
+      padding-bottom: 1%;
+      margin-top: 6%;
+      border-bottom: solid 2px;
+    }
+  </style>
+</head>
 
 <body>
-  <h2>Personal webpage under construction. Coming soon.</h2>
- 	
-  
+  <table class="intro">
+    <tbody>
+      <tr>
+        <td>
+          <div class="name">Maciej Pacut</div>
+          <div class="faculty">Postdoctoral researcher<br><br>
+            Technical University of Berlin<br>
+          </div>
+          <br> <br> <br>
+          <a href="https://dblp.org/pers/p/Pacut:Maciej.html" class="external">
+          <img src="dblp.png" width="16" height="16" "width:1em;margin-right:.5em;" alt="DBLP icon">
+          DBLP</a>
+          <br>
+          <a href="https://arxiv.org/a/pacut_m_1.html"  class="external"><img src="arx.jpg" width="16" height="16"  alt="arxiv icon">
+            arXiv</a>
+            <br>
+
+            <a href="https://scholar.google.pl/citations?user=KE9MLF8AAAAJ&hl=en"  class="external"><img src="googlescholar.png" width="16" height="16" alt="DBLP icon">
+              Google Scholar</a><br>
+
+              <span itemscope itemtype="https://schema.org/Person">
+                <a itemprop="sameAs" content="https://orcid.org/0000-0002-6379-1490" href="https://orcid.org/0000-0002-6379-1490" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"  class="external"><img src="ORCIDiD_icon32x32.png" width="16" height="16" alt="ORCID ID icon"> ORCID</a></span><br>
+
+                <a href="https://github.com/foo"  class="external">
+                  <img src="github.png" width="16" height="16" alt="github icon">
+                  github.com/foo</a>
+
+                </td>
+                <td style="text-align: center">
+                  <table>
+                    <tr>
+                      <td>
+                        <img alt="Maciej Pacut" src="./photo.webp" width="240" height="315">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="subscript">(photo 2020)</div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+
+              </tr>
+            </tbody></table>
+
+            <div class="intro-separator"></div>
+
+            <h1 class="section">Research</h1>
+
+            My research revolves around online algorithms for fundamental problems of computer networks and data centers. I am fortunate to collaborate with <a href="https://www.univie.ac.at/ct/stefan/">prof. Stefan Schmid</a> at TU Berlin, and we pursue a vision of <i>self-adjusting networks</i> that adapt to the traffic they serve.
 
 
+            <br><br>
+            Selected papers:
+                      <h2>Online Knapsack</h2>
+            <ul>
+              <li>
+                <b><a href="papers/knapsack-icalp2020.pdf">An Optimal Algorithm for Online Multiple Knapsack</a></b>
+                <a href=" https://www.youtube.com/watch?v=3DeDTKDSkbE">[vid]</a>
+                <a href="slides/knapsack-icalp2020.pdf">[slides]</a>
+                <a href="bibtex/knapsack-icalp2020.bib">[cite bibtex]</a>
+                <br>
+                Marcin Bienkowski, Maciej Pacut, Krzysztof Piecuch<br>
 
-<p style="margin-bottom:13cm;"></p>
- 
-  <h3>(In progress)</h3>
-In the last decades, we witnessed a growing demand for performing large-scale computations,
-such as protein folding, fluid dynamics, weather and market prediction, or production process
-optimization. The scale of such computations exceeds abilities of a single computer, hence
-they need to be performed on large sets of machines that cooperate over an interconnecting
-network, collectively called the computer cluster. Owning and maintaing such large-scale com-
-puting infrastructure is often impractical and expensive, and parties look for alternative ways
-to perform computations. In comparison, outsourcing computations provides a wide range of
-benefits. First of all, it mitigates the costs of infrastructure management and maintenance.
-This is crucial especially for computational tasks that arise occasionally, such as high-quality
-rendering, computer verification of products with long development time or analysis of human-
-harvested data. Second, such approach dismisses the need to foresee the appropriate demand
-for resources. If such demand increases unexpectedly, it can be immediately provided without
-physical extension of the infrastructure. This led to a shift of computations to large-scale re-
-mote facilites that contain computer clusters with their support infrastructure, the so-called
-data centers. Performing computations in these external data centers provides the impression
-of unlimited computational power on demand, and is called the cloud computing.
-The demand for outsourcing computations to the cloud created a whole market for such
-services. Modern suppliers of processing power such as Microsoft Azure [AZU], Amazon Elastic
-Cloud Computing EC2 [AWS] or Google Compute Engine [GCE] provide convenient on-demand
-computational power while hiding most of details concerning resource management. Processing
-capabilities are quickly and conveniently accessible to every interested party.
-Computational tasks require multiple types of resources to complete: CPU time, memory,
-I/O operations and network bandwith. Often the demand for these resources varies in time
-and is unpredictable. For this reason, a data center that performs just one task at the time
-would waste resources. In contrast, the co-existence of multiple tasks in the data center allows to
-compensate for the variable demand for resources by resource-aware scheduling. Such techniques
-are especially useful in (but not limited to) computationally-intensive applications, where the
-response time is not the primary concern.
- For example, processing speed can be scaled down to
 
-save energy, memory can be shared or distributed, and cooperating processes can be migrated
-closer to each other in the network to save bandwidth. Optimization of this resource is critical for performing efficient large-scale
-computations, as those involve multiple machines that cooperate over network. To this end, we
-will make use of a sophisticated control system, called virtualization.
-The transmitted data is split into portions called packets, which are sent independently, and
-the task of relying a packet to its destination, called packet forwarding, is performed by network
-devices called routers. A single network is usually connected with multiple adjacent networks,
-and at each intermediate network, a bordering router needs to determine the next router on the
-way of the packet. To this end, such device directs packets based on the set of its forwarding
-rules, each corresponding to some network. The number of forwarding rules stored in core
-Internet routers is almost as numerous as the total number of networks, which leads to enormous
-forwarding tables to manage. We investigate the increasingly common scenario, where the
-number of rules exceeds the available memory capacity.
-Typically,
-routers located near the core of the Internet, e.g. in top-tier networks owned by large ISP, store
-a sizeable number of forwarding rules, and this number continues to grow with the size of the
-Internet. As the size of forwarding tables grows, it inevitably exceeds the available memory of
-the router. One of the goals of the ISP is to utilize existing devices in the most efficient way and
-to delay the need for an upgrade. The obvious but expensive solution is to provide additional
-memory for the device. We focus on an alternative approach, where the router continues to
-operate with insufficient memory to store the whole forwarding table. In this approach, it is
-important to preserve the correctness and efficiency of packet forwarding: both are crucial in
-minimizing data transfer latency and maximizing the throughput.
-To use the data center’s interconnecting network efficiently, cooperating computational tasks
-should be placed close to each other and close to the data they process. This gives a possibility to manage the physical
-placement of a computation in a way that is transparent to the computation. A particular piece
-of technology that provides the flexibility in placement of computations is virtualization.
-Virtualization provides an abstraction layer, called the virtual machine, for the underlying
-hardware of a computer system. Virtual machine mimics functionality of the physical hardware
-so closely that it can be used as an environment for a complete operating system. Such operating
-system, running on a virtual machine is called the guest operating system. It operates in additon
-to the host operating system, which runs directly on the physical hardware. In a data center,
+                International Colloquium on Automata, Languages and Programming, Track A (<b>ICALP 2020</b>)
+              </li>
+            </ul>
+            <h2>Online Graph Partitioning</h2>
+            <ul>
+              <li>
 
-the main purpose of virtualization is to provide the complete and non-restricted environment
-for the client that is isolated from the management software and other clients’ tasks. The guest
-operating system is restricted to the virtualized environment: it has the perspective of housing
-a whole computer system.
- Machine Migration
-Besides providing an abstraction layer, mature virtualization solutions suited for data centers
-such as Xen [XEN], KVM [KVM], Hyper-V [HyV], VMware ESXi [VME], provide several control
-features. In particular, absolute control over the underlying virtual hardware allows to suspend
-and resume the execution of the guest operating system at will. Such functionality provides
-building blocks for the feature of migration, which transfers the complete virtual machine to
-a different physical machine. This is possible without shutting down the guest operating system,
-and hence it provides a powerful resource-management tool that is transparent to clients.
-Such mechanisms play an important role in load balancing in the data center and allow for
-sophisticated optimizations such as reducing network distance between communicating virtual
-machines.
-The computing power of a single virtual machine is usually insufficient for the client, as the
-resources of a virtual machine are limited by resources available to its host. Therefore, data
-centers provide its resources as a sizeable set of virtual machines connected by a network. Col-
-lectively, the virtual machines with their interconnecting network are called a virtual network,
-where the cooperating virtual machines are refered to as nodes of a virtual network. To guar-
-antee certain quality of service (QoS ) for multitude of co-existing virtual networks, up-front
-bandwidth reservations are required. However, the generality of performed calculations results
-in unpredictibility of communication patterns and poses a challenge in optimization of band-
-width reservations. 
-To measure the quality of resource management strategy we state formal opti-
-mization problems; for now, we only briefly sketch it. Physical components of a data center
-are modelled as a graph called a substrate network, in which vertices correspond to physical
-machines, and edges correspond to an interconnecting network. A communication cost between
-a pair of physical machines is proportional to edge-distance in substrate network (the number of
-hops in the substrate network). A communication pattern among virtual machines is also mod-
-elled as a graph, called a communication graph. In such settings, the communication among
-virtual machines running on certain physical machines can be viewed as a graph embedding
-of communication graph into a substrate network [GKK+ 01]. The main objective is to find
-an embedding that locates closely the virtual machines that communicate often.
-</body> 
+                <b><a href="./papers/graphpartition-optimal.pdf"> Optimal Online Balanced Graph Partitioning</a></b>
+                <a href="bibtex/graphpartition-infocom2021.bib">[cite bibtex]</a>
+                <br>
+                Maciej Pacut, Mahmoud Parham, Stefan Schmid<br>
 
+                IEEE International Conference on Computer Communications
+                (<b>INFOCOM 2021</b>)
+
+              </li>
+
+              <li>
+                <b><a href="papers/lb_graphpartition_podc2020.pdf">Deterministic Lower Bound
+                  for Dynamic Balanced Graph Partitioning
+                </a></b>
+                <a href="bibtex/lb_graphpartition-podc2020.bib">[cite bibtex]</a>
+                <br>
+                Maciej Pacut, Mahmoud Parham, Stefan Schmid<br>
+
+
+                ACM Symposium on Principles of Distributed Computing: Brief Announcement (<b>PODC 2020</b>)
+
+              </li>
+              <li>
+                <b><a href="papers/graphpartition-sidma2020.pdf">Dynamic Balanced Graph Partitioning</a></b>
+                <a href="bibtex/graphpartition-sidma2020.bib">[cite bibtex]</a>
+                <br>
+                Chen Avin, Marcin Bienkowski, Andreas Loukas, Maciej Pacut, Stefan Schmid<br>
+
+
+                SIAM Journal on Discrete Mathematics (<b>J. Discrete Math. 2020</b>)
+
+              </li>
+              <li>
+                <b><a href="papers/graphpartition-disc2016.pdf">Online Balanced Repartitioning</a></b>
+                <a href="bibtex/graphpartition-disc2016.bib">[cite bibtex]</a>
+                <br>
+                Chen Avin, Andreas Loukas, Maciej Pacut, Stefan Schmid<br>
+
+
+                International Symposium on Distributed Computing (<b>DISC 2016</b>)
+              </li>
+            </ul>
+
+            <h2>Online Caching</h2>
+            <ul>
+              <li>
+                <b><a href="papers/treecaching-spaa2017.pdf">Online Tree Caching</a></b>
+                <a href="bibtex/treecaching-spaa2017.bib">[cite bibtex]</a>
+                <br>
+                Marcin Bienkowski, Jan Marcinkowski, Maciej Pacut, Stefan Schmid, Aleksandra Spyra<br>
+
+
+                ACM Symposium on Parallelism in Algorithms and Architectures (<b>SPAA 2017</b>)
+
+
+              </li>
+            </ul>
+
+              <h1 class="section">Duties / opportunities</h1>
+
+              <p> Host of <a href="https://maciej.pacut.pl/net-theory">networking theory research seminar</a> at <a href="https://ct.cs.univie.ac.at">Communication Technologies Group</a>, University of Vienna, and <a href="https://www.inet.tu-berlin.de">INET TU Berlin</a>. </p>
+
+              <p>
+                PhD student mentorship:
+                <ul>
+                  <li> Julien Dallot, Technical University of Berlin, informal PhD co-advisor (main advisor: prof. Stefan Schmid) 2022&ndash;now</li>
+                  <li> <a href="https://pourdamghani.github.io">Arash Pourdamghani</a>, University of Vienna and Technical University of Berlin, informal PhD co-advisor (main advisor: prof. Stefan Schmid) 2020&ndash;now</li>
+                  <li>Mahmoud Parham, University of Vienna, Austria, informal PhD co-advisor (main advisor: prof. Stefan Schmid) 2019&ndash;now</li>
+                </ul>
+
+                Internship supervision:
+                <ul>
+                  <li>Julien Dallot, TELECOM Paris, France, project "Virtual machine migration in star topologies", 03.2022&ndash;now (the second interns)</li>
+                  <li>Atoli Huppé, ENSTA Paris, France, project "Adaptive compression algorithms", 10.2021&ndash;now</li>
+                  <li>Anton Paramonov, St. Petersburg State University, Russia, project self-adjusting linear networks, 12.2021&ndash;01.2022</li>
+                  <li>Marzieh Aliakbarpour, Sharif University of Technology, Iran, project "Online list factoring", 10.2021&ndash;01.2022</li>
+                  <li>Siddhesh Kalekar, IIT Delhi, India, project "Offline list access with precedence constraints", 05.2021&ndash;08.2021</li>
+                  <li>Loric André, ENSTA Paris, France, project "Stochastic list access with precedence constraints", 16.05.2021&ndash;10.08.2021 <a href="./misc/internship-report-loric-andre.pdf">[report]</a></li>
+                  <li>Mahtab Alghassi, Sharif University of Technology, Iran, "Itinerant List Update", 04.2021&ndash;05.2021 </li>
+                  <li>Julien Dallot, ENSTA Paris, France, project "Cascade hypothesis", 01.07.2020&ndash;14.09.2020 <a href="./misc/internship-report-julien-dallot.pdf">[report]</a></li>
+                  <li>Alexandre Labbé, ENSTA Paris, France, project "Demand-aware reconfigurable network design", 18.05.2020&ndash;31.07.2020 <a href="./misc/internship-report-alexandre-labbe.pdf">[report]</a></li>
+                </ul>
+
+                Event organization:
+                <ul>
+                  <li>Local supporter of <a href="http://amppz.mimuw.edu.pl">AMPPZ Programming Contest</a> 2016 Wrocław, Poland</li>
+                  <li>Local supporter of <a href="https://www.oi.edu.pl">Polish Olympiad in Informatics</a> 2015, Wrocław, Poland</li>
+                  <li>Local supporter of <a href="http://algo2014.ii.uni.wroc.pl">ALGO Conference</a> 2014, Wrocław, Poland</li>
+                </ul>
+
+                <p>Reviewer for <a
+                  href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71">Journal on Transactions on Parallel and Distributed Systems</a>, <a href="https://infocom2021.ieee-infocom.org/">INFOCOM</a>, <a href="https://www.sigmetrics.org/">SIGMETRICS</a>, <a href="https://dl.acm.org/conference/conext">CoNEXT</a>, <a href="https://dl.acm.org/journal/ton">IEEE/ACM Transactions on Networking</a>.</p>
+
+                  <h1 class="section">Short CV</h1>
+
+                  <ul>
+                    <li>
+                      10.2021 &ndash; now: postdoctoral researcher at <a href="https://www.inet.tu-berlin.de">INET, Technical University of Berlin</a>
+                    </li>
+                    <li>
+                      2021 &ndash; now: researcher in <a href="https://www.fwf.ac.at/">Austrian Science Fund (FWF)</a> project Dependable Network Data Plane for the Cloud (DELTA), I 5025-N
+                    </li>
+                    <li>
+                      2020 &ndash; now: researcher in <a href="https://www.fwf.ac.at/">Austrian Science Fund (FWF)</a> project Adversarial Design Framework for Self-Driving Networks, I 4800-N
+                    </li>
+                    <li>
+                      03.2020 &ndash; 09.2021: postdoctoral researcher at <a href="https://ct.cs.univie.ac.at">Communication Technology Group</a>, Faculty of Computer Science, University of Vienna
+                      under supervision of <a href="https://www.univie.ac.at/ct/stefan/"> Univ.-Prof. Dr.sc. Stefan Schmid</a>
+                    </li>
+                    <li>
+                      2020 &ndash; now: <a href="https://self-adjusting.net/team/maciej-pacut/">researcher</a> in <a href="https://erc.europa.eu/">ERC</a> project <a href="https://self-adjusting.net/">Self-adjusting networks</a>
+                    </li>
+                    <li>
+                      2019: PhD in Computer Science at <a href="http://www.ii.uni.wroc.pl/badania/zaklad/ZOK">Combinatorial Optimization Group</a>, Department of Mathematics and Computer Science, University of Wrocław, Poland under supervision of <a href="https://www.ii.uni.wroc.pl/~mbi">dr. hab. Marcin Bieńkowski</a>. PhD thesis <a href="papers/phd_maciej_pacut.pdf">"Algorithmic aspects of contemporary networks"</a>, reviewers: prof. Guy Even, Tel-Aviv University, dr. hab. Marcin Mucha, University of Warsaw
+                    </li>
+
+                    <li>
+                      2018: internships at <a href="https://ct.cs.univie.ac.at">Communication Technology Group</a>, Faculty of Computer Science, University of Vienna
+                    </li>
+
+                    <li>
+                      2017 &ndash; 2018: principal investigator in <a
+                      href="https://www.ncn.gov.pl/?language=en">NCN</a> project <a
+                      href="./ncn-grant.html">Online algorithms for packing and covering problems</a>
+                    </li>
+
+                    <li>
+                      2014 &ndash; 2017: researcher in <a href="https://www.ncn.gov.pl/?language=en">NCN</a> project <a href="https://sites.google.com/cs.uni.wroc.pl/marcinbienkowski/ncn_2014">Online algorithms for fundamental network problems</a>
+                    </li>
+
+                    <li>
+                      2014: internships at <a href="https://www.inet.tu-berlin.de">INET</a>, Department of Telecommunication Systems, Technical University of Berlin
+                    </li>
+                  </ul>
+
+                  <h1 class="section" style="text-align:right">Personal</h1>
+
+                  <div class="personal">
+                    Born 1989 in Poland. Maciej Pacut is pronounced <a href="https://en.wiktionary.org/wiki/Maciej">/ˈma.t͡ɕɛj</a><span style="padding-right:6px"></span> <a href="https://itinerarium.github.io/phoneme-synthesis">'pa.t͡sut/</a>.
+                    <p>
+
+                    </p>
+
+                    <p class="footer-separator"></p>
+                    <img width="100" height="100" src="footer.webp" alt="mountain biking">
+                  </div>
+  </body>
 </html>
-                
+
